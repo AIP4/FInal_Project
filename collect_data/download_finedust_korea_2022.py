@@ -18,7 +18,7 @@ def api_to_csv(url, save_path, columns):
         df['TM'] = df['TM'].astype(str)
 
         # 시간 단위 필터링
-        df_hourly = df[df['TM'].str.endswith('0000')]
+        df_hourly = df[df['TM'].str.endswith('00')]
         df_hourly = df_hourly.iloc[:, :3]
 
         return df_hourly
