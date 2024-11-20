@@ -17,5 +17,5 @@ for year in years:
     for filepath in sub_csv_files:
         df_tmp = pd.read_csv(filepath, encoding="utf-8-sig")
         df = pd.concat([df, df_tmp], axis=0)
-    save_path = "./data/kma/" + f"kma_{year}" + ".csv"
+    save_path = "./data/kma/weather" + f"kma_{year}_seoul" + ".csv"
     df.to_csv(save_path, index=False, encoding="utf-8-sig")
