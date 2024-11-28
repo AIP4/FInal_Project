@@ -27,11 +27,11 @@ def api_to_csv(url, save_path, columns):
 
 def save_csv(data_type, BASE_URL, API_KEY, columns):
     ### Create folder
-    os.makedirs(f"data/kma/{data_type}", exist_ok=True)
+    os.makedirs(f"data/kma/{year}/{data_type}", exist_ok=True)
 
     for stn in tqdm(stns, desc="Stations"):
         df = pd.DataFrame()
-        SAVE_PATH = f"./data/kma/{data_type}/kma_2022_{locations[stn]}.csv"
+        SAVE_PATH = f"./data/kma/{year}/{data_type}/kma_{year}_{locations[stn]}.csv"
 
         for i in tqdm(range(len(combinations) - 1), desc=f"Processing combinations for {locations[stn]}", leave=False):
             TM1 = combinations[i]
@@ -48,12 +48,16 @@ def save_csv(data_type, BASE_URL, API_KEY, columns):
 ### 지상 관측자료 (시간)
 API_KEY = "n82QCM3KRbCNkAjNyoWwTg"
 WEATHER_BASE_URL = "https://apihub.kma.go.kr/api/typ01/url/kma_sfctm3.php"
+# year = 2018
+years = [2018, 2019, 2020, 2021, 2022]
 
-stns = [184, 101, 108, 133, 136, 146, 143, 156, 159]    # 지점 번호
-locations = {184: "jeju", 101: "chuncheon", 133: "daejeon", 136: "andong",
-             146: "jeonju", 143: "daegu", 156: "gwangju", 159: "busan", 108: "seoul"}
+# stns = [184, 101, 108, 133, 136, 146, 143, 156, 159]    # 지점 번호
+# locations = {184: "jeju", 101: "chuncheon", 133: "daejeon", 136: "andong",
+#              146: "jeonju", 143: "daegu", 156: "gwangju", 159: "busan", 108: "seoul"}
+stns = [136, 146, 143, 156, 108]    # 지점 번호
+locations = {136: "andong", 146: "jeonju", 143: "daegu", 156: "gwangju", 108: "seoul"}
 
-combinations = [f"2022{month:02d}010000" for month in range(1, 13)] + ["202301010000"]
+combinations = [f"{year}{month:02d}010000" for month in range(1, 13)]
 
 weather_columns = [
         "TM", "STN", "WD", "WS", "GST_WD", "GST_WS", "GST_TM", "PA", "PS", "PT", "PR",
@@ -62,5 +66,6 @@ weather_columns = [
         "CT", "CT_TOP", "CT_MID", "CT_LOW", "VS", "SS", "SI", "ST_GD", "TS", "TE_005", "TE_01",
         "TE_02", "TE_03", "ST_SEA", "WH", "BF", "IR", "IX"
         ]
-
-save_csv("weather", WEATHER_BASE_URL, API_KEY, weather_columns)
+for year in years:
+    combinations = [f"{year}{month:02d}010000" for month in range(1, 13)]
+    save_csv("weather", WEATHER_BASE_URL, API_KEY, weather_columns)

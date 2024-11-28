@@ -25,13 +25,13 @@ def api_to_csv(url, save_path, columns):
     else:
         print(f"Error: {response.status_code}")
 
-def save_csv(data_type, BASE_URL, API_KEY, columns):
+def save_csv(data_type, BASE_URL, API_KEY, columns, year):
     ### Create folder
-    os.makedirs(f"data/kma/{data_type}", exist_ok=True)
+    os.makedirs(f"data/kma/{year}/{data_type}", exist_ok=True)
 
     for stn in tqdm(stns, desc="Stations"):
         df = pd.DataFrame()
-        SAVE_PATH = f"./data/kma/{data_type}/kma_2022_{locations[stn]}.csv"
+        SAVE_PATH = f"./data/kma/{year}/{data_type}/kma_{year}_{locations[stn]}.csv"
 
         for i in tqdm(range(len(combinations) - 1), desc=f"Processing combinations for {locations[stn]}", leave=False):
             TM1 = combinations[i]
@@ -48,14 +48,18 @@ def save_csv(data_type, BASE_URL, API_KEY, columns):
 ### 지상 관측자료 (시간)
 API_KEY = "n82QCM3KRbCNkAjNyoWwTg"
 FINEDUST_BASE_URL = "https://apihub.kma.go.kr/api/typ01/url/kma_pm10.php"
+# year = 2018
+years = [2018, 2019, 2020, 2021, 2022]
 
 stns = [136, 146, 143, 156, 108]    # 지점 번호
 locations = {136: "andong", 146: "jeonju", 143: "daegu", 156: "gwangju", 108: "seoul"}
 
-combinations = [f"2022{month:02d}010000" for month in range(1, 13)] + ["202301010000"]
+combinations = [f"{year}{month:02d}010000" for month in range(1, 13)]
 
 finedust_columns = [
     "TM", "STN_ID", "PM10", "NULL1", "NULL2", "NULL3"
 ]
 
-save_csv("finedust", FINEDUST_BASE_URL, API_KEY, finedust_columns)
+for year in years:
+    combinations = [f"{year}{month:02d}010000" for month in range(1, 13)]
+    save_csv("finedust", FINEDUST_BASE_URL, API_KEY, finedust_columns, year)
