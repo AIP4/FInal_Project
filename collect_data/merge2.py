@@ -15,12 +15,14 @@ for year in years:
     for city in citys:
         sub_csv_files = [f"./data/kma/{year}/finedust/kma_{year}_{city}.csv", 
                          f"./data/kma/{year}/weather/kma_{year}_{city}.csv"]
-        
-        df = pd.DataFrame()
+                
         print(f"concating: {sub_csv_files}")
-        for filepath in sub_csv_files:
-            df_tmp = pd.read_csv(filepath, encoding="utf-8-sig")
-            df = pd.concat([df, df_tmp], axis=0)
-        os.makedirs(f"./filtered/kma/{year}")
+        df1 = pd.read_csv(sub_csv_files[0])
+        df2 = pd.read_csv(sub_csv_files[1])
+
+        os.makedirs(f"./filtered/kma/{year}", exist_ok=True)
+
+        df = pd.merge(df1, df2, on="TM", how="inner")
+
         save_path = f"./filtered/kma/{year}/kma_{year}_{city}.csv"
         df.to_csv(save_path, index=False, encoding="utf-8-sig")
