@@ -50,5 +50,3 @@
 | **BF**      | Beaufort scale of wind force. |
 | **IR**      | Infrared radiation (in W/m²). |
 | **IX**      | Index value (custom index specific to dataset). |
-
-**Note**: 일부 컬럼 설명은 데이터셋의 문서를 참고하여 확인해야 합니다. 위 내용은 일반적인 기상 데이터에 대한 설명으로 작성되었습니다.
