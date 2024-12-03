@@ -19,7 +19,9 @@ class FinedustDataset(Dataset):
         self.time_column = self.data['diff'].values
         
         self.dust_column = "PM10"
-        self.feature_columns = self.data.columns.drop([self.dust_column, 'TM'])
+        self.feature_columns = self.data.select_dtypes(include=[np.number]).columns.tolist()
+        # Y 값과 TM 제외
+        self.feature_columns.remove(self.dust_column)
 
         for i in range(len(self.data) - self.window_size - self.prediction_length + 1):
             time_window = self.time_column[i:i + self.window_size + self.prediction_length]
@@ -33,7 +35,7 @@ class FinedustDataset(Dataset):
                 continue
         
     def __len__(self):
-        return len(self.data) - self.window_size - self.prediction_length + 1
+        return len(self.sequences)
     
     def __getitem__(self, idx):
         # window size: window_size

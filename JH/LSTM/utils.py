@@ -15,6 +15,9 @@ def concat_china_data(df):
         df = pd.merge(df, df_cma, on="TM", how="inner", suffixes=("", f"_{loc}"))
 
     df = df.drop_duplicates(subset='TM').reset_index(drop=True)
+    df = df.loc[:, ~df.columns.str.contains("ORG")]
+    df = df.sort_values(by='TM').reset_index(drop=True)
+    
     return df
 
 def print_missing_info(df):
@@ -61,7 +64,7 @@ def convert_timesteps(data):
 
     # diff 재계산
     data['diff'] = data['TM'].diff().dt.total_seconds() // 3600
-    data.iloc[0, 'diff'] = 3
+    data.loc[0, 'diff'] = 3
 
     return data
 
