@@ -1,0 +1,17 @@
+Feature Importances:
+VS: 2.5766
+PM10_dalian: 2.4788
+WD: 1.2138
+HM: 1.1430
+TD: 1.1031
+TA: 1.0971
+WS: 0.7677
+PV: 0.7095
+TS: 0.5012
+TE_02: 0.4381
+TE_005: 0.3030
+TE_01: 0.1877
+TE_03: 0.1836
+PM10_yanan: 0.0486
+PM10_chifeng: 0.0078
+PM10_qingdao: -0.0005

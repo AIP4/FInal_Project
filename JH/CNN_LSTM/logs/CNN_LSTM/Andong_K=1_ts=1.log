@@ -1,0 +1,351 @@
+2024-12-05 21:35:44,196 - Training model with Andong_K=1
+2024-12-05 21:35:44,197 - Config: {'learning_rate': 0.0002, 'epochs': 500, 'batch_size': 32, 'num_layers': 2, 'hidden_size': 128, 'window_size': 24, 'output_size': 1, 'dropout_prob': 0.2, 'patience': 10, 'out_channels': 4, 'kernel_size': 3, 'K': 1}
+2024-12-05 21:35:44,197 - Model: FinedustCNNLSTM(
+  (cnn): PM10CNN(
+    (act): GELU(approximate='none')
+    (conv_list): ModuleList(
+      (0): Conv1d(4, 4, kernel_size=(3,), stride=(1,), padding=(1,))
+    )
+  )
+  (lstm): FinedustLSTM(
+    (lstm): LSTMEmbedding(
+      (lstm): LSTM(12, 128, num_layers=2, batch_first=True, dropout=0.2)
+    )
+    (fc1): Linear(in_features=128, out_features=128, bias=True)
+    (fc2): Linear(in_features=128, out_features=1, bias=True)
+    (act): GELU(approximate='none')
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+)
+2024-12-05 21:35:44,198 - Model size: 221493
+
+2024-12-05 21:35:44,198 - Train dataset: 8406
+2024-12-05 21:35:44,198 - Valid dataset: 2102
+
+2024-12-05 21:35:50,333 - Epoch 1/500, Train Loss: 25.2758, Val Loss: 23.1793
+2024-12-05 21:35:51,646 - Model saved with loss: 23.1793
+2024-12-05 21:35:52,750 - Epoch 2/500, Train Loss: 21.5598, Val Loss: 23.1679
+2024-12-05 21:35:52,760 - Model saved with loss: 23.1679
+2024-12-05 21:35:53,848 - Epoch 3/500, Train Loss: 21.7369, Val Loss: 23.1710
+2024-12-05 21:35:54,908 - Epoch 4/500, Train Loss: 21.7326, Val Loss: 23.2086
+2024-12-05 21:35:55,981 - Epoch 5/500, Train Loss: 21.7135, Val Loss: 23.1779
+2024-12-05 21:35:57,043 - Epoch 6/500, Train Loss: 21.6358, Val Loss: 23.1772
+2024-12-05 21:35:58,090 - Epoch 7/500, Train Loss: 21.6300, Val Loss: 23.1846
+2024-12-05 21:35:59,156 - Epoch 8/500, Train Loss: 21.6916, Val Loss: 23.1760
+2024-12-05 21:36:00,226 - Epoch 9/500, Train Loss: 21.5877, Val Loss: 23.1642
+2024-12-05 21:36:00,237 - Model saved with loss: 23.1642
+2024-12-05 21:36:01,319 - Epoch 10/500, Train Loss: 20.8176, Val Loss: 21.6949
+2024-12-05 21:36:01,329 - Model saved with loss: 21.6949
+2024-12-05 21:36:02,414 - Epoch 11/500, Train Loss: 20.0026, Val Loss: 21.4805
+2024-12-05 21:36:02,424 - Model saved with loss: 21.4805
+2024-12-05 21:36:03,525 - Epoch 12/500, Train Loss: 19.6020, Val Loss: 21.1841
+2024-12-05 21:36:03,535 - Model saved with loss: 21.1841
+2024-12-05 21:36:04,625 - Epoch 13/500, Train Loss: 19.5515, Val Loss: 21.2187
+2024-12-05 21:36:05,718 - Epoch 14/500, Train Loss: 19.4373, Val Loss: 20.9846
+2024-12-05 21:36:05,727 - Model saved with loss: 20.9846
+2024-12-05 21:36:06,826 - Epoch 15/500, Train Loss: 19.3298, Val Loss: 20.8439
+2024-12-05 21:36:06,834 - Model saved with loss: 20.8439
+2024-12-05 21:36:07,914 - Epoch 16/500, Train Loss: 19.1704, Val Loss: 20.5335
+2024-12-05 21:36:07,923 - Model saved with loss: 20.5335
+2024-12-05 21:36:08,984 - Epoch 17/500, Train Loss: 18.8950, Val Loss: 20.2293
+2024-12-05 21:36:08,993 - Model saved with loss: 20.2293
+2024-12-05 21:36:10,058 - Epoch 18/500, Train Loss: 18.6482, Val Loss: 19.9910
+2024-12-05 21:36:10,068 - Model saved with loss: 19.9910
+2024-12-05 21:36:11,128 - Epoch 19/500, Train Loss: 18.6927, Val Loss: 20.0236
+2024-12-05 21:36:12,204 - Epoch 20/500, Train Loss: 18.5163, Val Loss: 19.6749
+2024-12-05 21:36:12,213 - Model saved with loss: 19.6749
+2024-12-05 21:36:13,292 - Epoch 21/500, Train Loss: 18.1906, Val Loss: 20.4414
+2024-12-05 21:36:14,376 - Epoch 22/500, Train Loss: 18.2578, Val Loss: 19.6089
+2024-12-05 21:36:14,386 - Model saved with loss: 19.6089
+2024-12-05 21:36:15,478 - Epoch 23/500, Train Loss: 17.9554, Val Loss: 19.5953
+2024-12-05 21:36:15,492 - Model saved with loss: 19.5953
+2024-12-05 21:36:16,565 - Epoch 24/500, Train Loss: 17.9568, Val Loss: 19.2133
+2024-12-05 21:36:16,574 - Model saved with loss: 19.2133
+2024-12-05 21:36:17,640 - Epoch 25/500, Train Loss: 17.7885, Val Loss: 19.2275
+2024-12-05 21:36:18,718 - Epoch 26/500, Train Loss: 17.8313, Val Loss: 19.3819
+2024-12-05 21:36:19,778 - Epoch 27/500, Train Loss: 17.6481, Val Loss: 18.9519
+2024-12-05 21:36:19,787 - Model saved with loss: 18.9519
+2024-12-05 21:36:20,863 - Epoch 28/500, Train Loss: 17.6446, Val Loss: 19.3299
+2024-12-05 21:36:21,940 - Epoch 29/500, Train Loss: 17.5385, Val Loss: 18.9859
+2024-12-05 21:36:23,017 - Epoch 30/500, Train Loss: 17.5150, Val Loss: 18.9064
+2024-12-05 21:36:23,026 - Model saved with loss: 18.9064
+2024-12-05 21:36:24,100 - Epoch 31/500, Train Loss: 17.1533, Val Loss: 18.7436
+2024-12-05 21:36:24,110 - Model saved with loss: 18.7436
+2024-12-05 21:36:25,185 - Epoch 32/500, Train Loss: 17.2185, Val Loss: 19.2433
+2024-12-05 21:36:26,263 - Epoch 33/500, Train Loss: 17.1820, Val Loss: 18.4743
+2024-12-05 21:36:26,274 - Model saved with loss: 18.4743
+2024-12-05 21:36:27,366 - Epoch 34/500, Train Loss: 17.0349, Val Loss: 18.4862
+2024-12-05 21:36:28,463 - Epoch 35/500, Train Loss: 17.0373, Val Loss: 18.4119
+2024-12-05 21:36:28,474 - Model saved with loss: 18.4119
+2024-12-05 21:36:29,574 - Epoch 36/500, Train Loss: 17.0366, Val Loss: 19.1423
+2024-12-05 21:36:30,658 - Epoch 37/500, Train Loss: 16.9379, Val Loss: 18.3933
+2024-12-05 21:36:30,667 - Model saved with loss: 18.3933
+2024-12-05 21:36:31,747 - Epoch 38/500, Train Loss: 16.6763, Val Loss: 18.4079
+2024-12-05 21:36:32,828 - Epoch 39/500, Train Loss: 16.6991, Val Loss: 18.4828
+2024-12-05 21:36:33,913 - Epoch 40/500, Train Loss: 16.6739, Val Loss: 18.3108
+2024-12-05 21:36:33,923 - Model saved with loss: 18.3108
+2024-12-05 21:36:35,011 - Epoch 41/500, Train Loss: 16.5501, Val Loss: 18.8953
+2024-12-05 21:36:36,091 - Epoch 42/500, Train Loss: 16.3735, Val Loss: 18.0108
+2024-12-05 21:36:36,100 - Model saved with loss: 18.0108
+2024-12-05 21:36:37,193 - Epoch 43/500, Train Loss: 16.0801, Val Loss: 18.3821
+2024-12-05 21:36:38,274 - Epoch 44/500, Train Loss: 17.0351, Val Loss: 18.4566
+2024-12-05 21:36:39,355 - Epoch 45/500, Train Loss: 16.3160, Val Loss: 18.3386
+2024-12-05 21:36:40,443 - Epoch 46/500, Train Loss: 16.1228, Val Loss: 18.2844
+2024-12-05 21:36:41,513 - Epoch 47/500, Train Loss: 16.1948, Val Loss: 17.7604
+2024-12-05 21:36:41,522 - Model saved with loss: 17.7604
+2024-12-05 21:36:42,599 - Epoch 48/500, Train Loss: 16.2454, Val Loss: 18.0111
+2024-12-05 21:36:43,673 - Epoch 49/500, Train Loss: 15.9630, Val Loss: 17.7052
+2024-12-05 21:36:43,681 - Model saved with loss: 17.7052
+2024-12-05 21:36:44,752 - Epoch 50/500, Train Loss: 15.8456, Val Loss: 18.0669
+2024-12-05 21:36:45,877 - Epoch 51/500, Train Loss: 15.8301, Val Loss: 17.9268
+2024-12-05 21:36:46,940 - Epoch 52/500, Train Loss: 15.7486, Val Loss: 17.7242
+2024-12-05 21:36:48,008 - Epoch 53/500, Train Loss: 15.6871, Val Loss: 17.4728
+2024-12-05 21:36:48,018 - Model saved with loss: 17.4728
+2024-12-05 21:36:49,088 - Epoch 54/500, Train Loss: 15.7316, Val Loss: 17.7981
+2024-12-05 21:36:50,160 - Epoch 55/500, Train Loss: 15.9635, Val Loss: 17.5616
+2024-12-05 21:36:51,230 - Epoch 56/500, Train Loss: 15.3210, Val Loss: 17.2267
+2024-12-05 21:36:51,240 - Model saved with loss: 17.2267
+2024-12-05 21:36:52,368 - Epoch 57/500, Train Loss: 15.5836, Val Loss: 17.9559
+2024-12-05 21:36:53,444 - Epoch 58/500, Train Loss: 15.3307, Val Loss: 18.0387
+2024-12-05 21:36:54,523 - Epoch 59/500, Train Loss: 15.3327, Val Loss: 17.3955
+2024-12-05 21:36:55,584 - Epoch 60/500, Train Loss: 15.4776, Val Loss: 17.5187
+2024-12-05 21:36:56,655 - Epoch 61/500, Train Loss: 15.3846, Val Loss: 16.8897
+2024-12-05 21:36:56,675 - Model saved with loss: 16.8897
+2024-12-05 21:36:57,738 - Epoch 62/500, Train Loss: 15.0843, Val Loss: 16.7343
+2024-12-05 21:36:57,747 - Model saved with loss: 16.7343
+2024-12-05 21:36:58,806 - Epoch 63/500, Train Loss: 14.8045, Val Loss: 16.7665
+2024-12-05 21:36:59,873 - Epoch 64/500, Train Loss: 14.9184, Val Loss: 16.7995
+2024-12-05 21:37:00,940 - Epoch 65/500, Train Loss: 15.7055, Val Loss: 17.2851
+2024-12-05 21:37:02,000 - Epoch 66/500, Train Loss: 14.8700, Val Loss: 16.8121
+2024-12-05 21:37:03,085 - Epoch 67/500, Train Loss: 14.6965, Val Loss: 16.5658
+2024-12-05 21:37:03,095 - Model saved with loss: 16.5658
+2024-12-05 21:37:04,187 - Epoch 68/500, Train Loss: 14.5755, Val Loss: 16.4659
+2024-12-05 21:37:04,196 - Model saved with loss: 16.4659
+2024-12-05 21:37:05,270 - Epoch 69/500, Train Loss: 14.7331, Val Loss: 16.3196
+2024-12-05 21:37:05,279 - Model saved with loss: 16.3196
+2024-12-05 21:37:06,359 - Epoch 70/500, Train Loss: 14.2948, Val Loss: 16.7427
+2024-12-05 21:37:07,423 - Epoch 71/500, Train Loss: 15.2897, Val Loss: 17.6089
+2024-12-05 21:37:08,487 - Epoch 72/500, Train Loss: 14.8444, Val Loss: 16.2721
+2024-12-05 21:37:08,496 - Model saved with loss: 16.2721
+2024-12-05 21:37:09,555 - Epoch 73/500, Train Loss: 14.2846, Val Loss: 16.5467
+2024-12-05 21:37:10,609 - Epoch 74/500, Train Loss: 14.5317, Val Loss: 16.2900
+2024-12-05 21:37:11,673 - Epoch 75/500, Train Loss: 14.2849, Val Loss: 16.0614
+2024-12-05 21:37:11,682 - Model saved with loss: 16.0614
+2024-12-05 21:37:12,750 - Epoch 76/500, Train Loss: 14.4621, Val Loss: 15.9827
+2024-12-05 21:37:12,759 - Model saved with loss: 15.9827
+2024-12-05 21:37:13,836 - Epoch 77/500, Train Loss: 14.0464, Val Loss: 15.9238
+2024-12-05 21:37:13,845 - Model saved with loss: 15.9238
+2024-12-05 21:37:14,939 - Epoch 78/500, Train Loss: 13.9715, Val Loss: 15.8520
+2024-12-05 21:37:14,949 - Model saved with loss: 15.8520
+2024-12-05 21:37:16,021 - Epoch 79/500, Train Loss: 13.9078, Val Loss: 16.2467
+2024-12-05 21:37:17,119 - Epoch 80/500, Train Loss: 14.0728, Val Loss: 16.1983
+2024-12-05 21:37:18,199 - Epoch 81/500, Train Loss: 13.7112, Val Loss: 15.6417
+2024-12-05 21:37:18,208 - Model saved with loss: 15.6417
+2024-12-05 21:37:19,279 - Epoch 82/500, Train Loss: 13.6990, Val Loss: 15.6821
+2024-12-05 21:37:20,360 - Epoch 83/500, Train Loss: 13.5692, Val Loss: 15.5924
+2024-12-05 21:37:20,369 - Model saved with loss: 15.5924
+2024-12-05 21:37:21,440 - Epoch 84/500, Train Loss: 13.9832, Val Loss: 15.8661
+2024-12-05 21:37:22,507 - Epoch 85/500, Train Loss: 13.7565, Val Loss: 15.7317
+2024-12-05 21:37:23,581 - Epoch 86/500, Train Loss: 13.4589, Val Loss: 15.5902
+2024-12-05 21:37:23,590 - Model saved with loss: 15.5902
+2024-12-05 21:37:24,656 - Epoch 87/500, Train Loss: 13.4071, Val Loss: 15.7188
+2024-12-05 21:37:25,719 - Epoch 88/500, Train Loss: 13.5454, Val Loss: 15.7607
+2024-12-05 21:37:26,786 - Epoch 89/500, Train Loss: 13.6879, Val Loss: 15.2665
+2024-12-05 21:37:26,796 - Model saved with loss: 15.2665
+2024-12-05 21:37:27,864 - Epoch 90/500, Train Loss: 14.1593, Val Loss: 15.1470
+2024-12-05 21:37:27,873 - Model saved with loss: 15.1470
+2024-12-05 21:37:28,964 - Epoch 91/500, Train Loss: 13.3402, Val Loss: 15.3439
+2024-12-05 21:37:30,043 - Epoch 92/500, Train Loss: 13.1503, Val Loss: 15.2309
+2024-12-05 21:37:31,105 - Epoch 93/500, Train Loss: 13.2083, Val Loss: 15.0532
+2024-12-05 21:37:31,128 - Model saved with loss: 15.0532
+2024-12-05 21:37:32,185 - Epoch 94/500, Train Loss: 12.9839, Val Loss: 15.3939
+2024-12-05 21:37:33,244 - Epoch 95/500, Train Loss: 12.9391, Val Loss: 15.2294
+2024-12-05 21:37:34,304 - Epoch 96/500, Train Loss: 13.0415, Val Loss: 15.1760
+2024-12-05 21:37:35,364 - Epoch 97/500, Train Loss: 12.9345, Val Loss: 15.3804
+2024-12-05 21:37:36,424 - Epoch 98/500, Train Loss: 13.4527, Val Loss: 15.0546
+2024-12-05 21:37:37,483 - Epoch 99/500, Train Loss: 12.9330, Val Loss: 15.1062
+2024-12-05 21:37:38,552 - Epoch 100/500, Train Loss: 12.6566, Val Loss: 15.1443
+2024-12-05 21:37:39,637 - Epoch 101/500, Train Loss: 12.5031, Val Loss: 15.1583
+2024-12-05 21:37:40,718 - Epoch 102/500, Train Loss: 12.5501, Val Loss: 14.9343
+2024-12-05 21:37:40,729 - Model saved with loss: 14.9343
+2024-12-05 21:37:41,822 - Epoch 103/500, Train Loss: 12.7541, Val Loss: 14.9621
+2024-12-05 21:37:42,898 - Epoch 104/500, Train Loss: 12.3737, Val Loss: 14.6451
+2024-12-05 21:37:42,907 - Model saved with loss: 14.6451
+2024-12-05 21:37:43,979 - Epoch 105/500, Train Loss: 13.0053, Val Loss: 15.2533
+2024-12-05 21:37:45,048 - Epoch 106/500, Train Loss: 12.3932, Val Loss: 14.5041
+2024-12-05 21:37:45,059 - Model saved with loss: 14.5041
+2024-12-05 21:37:46,123 - Epoch 107/500, Train Loss: 12.3976, Val Loss: 14.8660
+2024-12-05 21:37:47,232 - Epoch 108/500, Train Loss: 12.9030, Val Loss: 14.8333
+2024-12-05 21:37:48,302 - Epoch 109/500, Train Loss: 12.2855, Val Loss: 14.3798
+2024-12-05 21:37:48,313 - Model saved with loss: 14.3798
+2024-12-05 21:37:49,379 - Epoch 110/500, Train Loss: 12.1273, Val Loss: 14.8183
+2024-12-05 21:37:50,429 - Epoch 111/500, Train Loss: 12.4778, Val Loss: 14.5409
+2024-12-05 21:37:51,496 - Epoch 112/500, Train Loss: 11.9568, Val Loss: 14.4120
+2024-12-05 21:37:52,565 - Epoch 113/500, Train Loss: 11.9647, Val Loss: 14.5814
+2024-12-05 21:37:53,702 - Epoch 114/500, Train Loss: 11.8963, Val Loss: 14.4400
+2024-12-05 21:37:54,768 - Epoch 115/500, Train Loss: 12.3506, Val Loss: 14.4576
+2024-12-05 21:37:55,832 - Epoch 116/500, Train Loss: 11.7102, Val Loss: 14.6078
+2024-12-05 21:37:56,902 - Epoch 117/500, Train Loss: 11.7425, Val Loss: 14.5587
+2024-12-05 21:37:57,970 - Epoch 118/500, Train Loss: 11.6136, Val Loss: 14.2050
+2024-12-05 21:37:57,980 - Model saved with loss: 14.2050
+2024-12-05 21:37:59,049 - Epoch 119/500, Train Loss: 11.8301, Val Loss: 14.8455
+2024-12-05 21:38:00,111 - Epoch 120/500, Train Loss: 11.7093, Val Loss: 14.0818
+2024-12-05 21:38:00,120 - Model saved with loss: 14.0818
+2024-12-05 21:38:01,186 - Epoch 121/500, Train Loss: 11.6013, Val Loss: 14.0959
+2024-12-05 21:38:02,256 - Epoch 122/500, Train Loss: 11.6116, Val Loss: 14.2627
+2024-12-05 21:38:03,316 - Epoch 123/500, Train Loss: 11.3552, Val Loss: 14.0529
+2024-12-05 21:38:03,325 - Model saved with loss: 14.0529
+2024-12-05 21:38:04,403 - Epoch 124/500, Train Loss: 11.6143, Val Loss: 14.8082
+2024-12-05 21:38:05,471 - Epoch 125/500, Train Loss: 11.7005, Val Loss: 14.7683
+2024-12-05 21:38:06,547 - Epoch 126/500, Train Loss: 11.7975, Val Loss: 14.0945
+2024-12-05 21:38:07,619 - Epoch 127/500, Train Loss: 11.4586, Val Loss: 14.0466
+2024-12-05 21:38:07,630 - Model saved with loss: 14.0466
+2024-12-05 21:38:08,693 - Epoch 128/500, Train Loss: 11.6687, Val Loss: 14.2903
+2024-12-05 21:38:09,759 - Epoch 129/500, Train Loss: 11.2870, Val Loss: 14.1691
+2024-12-05 21:38:10,822 - Epoch 130/500, Train Loss: 11.2473, Val Loss: 13.8923
+2024-12-05 21:38:10,833 - Model saved with loss: 13.8923
+2024-12-05 21:38:11,893 - Epoch 131/500, Train Loss: 11.2028, Val Loss: 13.7937
+2024-12-05 21:38:11,903 - Model saved with loss: 13.7937
+2024-12-05 21:38:12,966 - Epoch 132/500, Train Loss: 11.2723, Val Loss: 14.5704
+2024-12-05 21:38:14,037 - Epoch 133/500, Train Loss: 11.5068, Val Loss: 13.9948
+2024-12-05 21:38:15,095 - Epoch 134/500, Train Loss: 10.8636, Val Loss: 13.9558
+2024-12-05 21:38:16,176 - Epoch 135/500, Train Loss: 10.8830, Val Loss: 13.6763
+2024-12-05 21:38:16,186 - Model saved with loss: 13.6763
+2024-12-05 21:38:17,265 - Epoch 136/500, Train Loss: 11.0970, Val Loss: 13.6208
+2024-12-05 21:38:17,274 - Model saved with loss: 13.6208
+2024-12-05 21:38:18,375 - Epoch 137/500, Train Loss: 10.7465, Val Loss: 13.6039
+2024-12-05 21:38:18,384 - Model saved with loss: 13.6039
+2024-12-05 21:38:19,456 - Epoch 138/500, Train Loss: 10.8564, Val Loss: 14.5814
+2024-12-05 21:38:20,518 - Epoch 139/500, Train Loss: 11.4141, Val Loss: 13.5447
+2024-12-05 21:38:20,538 - Model saved with loss: 13.5447
+2024-12-05 21:38:21,601 - Epoch 140/500, Train Loss: 10.6569, Val Loss: 13.9185
+2024-12-05 21:38:22,663 - Epoch 141/500, Train Loss: 10.9214, Val Loss: 13.4878
+2024-12-05 21:38:22,672 - Model saved with loss: 13.4878
+2024-12-05 21:38:23,739 - Epoch 142/500, Train Loss: 10.6911, Val Loss: 13.4756
+2024-12-05 21:38:23,749 - Model saved with loss: 13.4756
+2024-12-05 21:38:24,819 - Epoch 143/500, Train Loss: 10.6014, Val Loss: 14.0785
+2024-12-05 21:38:25,889 - Epoch 144/500, Train Loss: 10.5171, Val Loss: 13.8229
+2024-12-05 21:38:26,962 - Epoch 145/500, Train Loss: 10.6475, Val Loss: 13.7465
+2024-12-05 21:38:28,028 - Epoch 146/500, Train Loss: 10.4918, Val Loss: 14.2041
+2024-12-05 21:38:29,100 - Epoch 147/500, Train Loss: 10.5740, Val Loss: 13.5794
+2024-12-05 21:38:30,195 - Epoch 148/500, Train Loss: 10.6248, Val Loss: 14.0697
+2024-12-05 21:38:31,273 - Epoch 149/500, Train Loss: 10.4145, Val Loss: 13.7822
+2024-12-05 21:38:32,343 - Epoch 150/500, Train Loss: 10.3155, Val Loss: 13.7890
+2024-12-05 21:38:33,400 - Epoch 151/500, Train Loss: 10.5518, Val Loss: 14.3294
+2024-12-05 21:38:34,465 - Epoch 152/500, Train Loss: 10.4438, Val Loss: 13.5052
+2024-12-05 21:38:34,466 - Early stopping triggered after 10 epochs without improvement
+2024-12-05 21:38:34,468 - Training completed with best loss: 13.4756
+2024-12-05 21:38:34,473 - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
+2024-12-05 21:38:34,474 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,474 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,474 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,474 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,475 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,475 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 0.05
+2024-12-05 21:38:34,475 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,475 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,475 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 0.33499999999999996
+2024-12-05 21:38:34,476 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,476 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,476 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,476 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,476 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,477 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,477 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,477 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,477 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,477 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,478 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,478 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,478 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 1.05
+2024-12-05 21:38:34,478 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,478 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,479 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,479 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,479 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,479 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 1.335
+2024-12-05 21:38:34,479 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,479 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,480 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,480 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,480 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,480 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,480 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,481 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,481 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,481 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,481 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf', name='Liberation Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,481 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf', name='Liberation Mono', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,482 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf', name='Liberation Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,482 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-BoldItalic.ttf', name='Liberation Sans Narrow', style='italic', variant='normal', weight=700, stretch='condensed', size='scalable')) = 11.535
+2024-12-05 21:38:34,482 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', name='Liberation Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,482 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf', name='Liberation Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,482 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Bold.ttf', name='Liberation Sans Narrow', style='normal', variant='normal', weight=700, stretch='condensed', size='scalable')) = 10.535
+2024-12-05 21:38:34,483 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf', name='Liberation Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,483 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf', name='Liberation Sans', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,483 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Regular.ttf', name='Liberation Sans Narrow', style='normal', variant='normal', weight=400, stretch='condensed', size='scalable')) = 10.25
+2024-12-05 21:38:34,483 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf', name='Liberation Sans', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,483 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', name='Liberation Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,483 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf', name='Liberation Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,484 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf', name='Liberation Mono', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,484 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/humor-sans/Humor-Sans.ttf', name='Humor Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,484 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Italic.ttf', name='Liberation Sans Narrow', style='italic', variant='normal', weight=400, stretch='condensed', size='scalable')) = 11.25
+2024-12-05 21:38:34,484 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf', name='Liberation Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,484 - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+2024-12-05 21:38:34,531 - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0.
+2024-12-05 21:38:34,532 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,532 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,532 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,533 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,533 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,533 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 0.05
+2024-12-05 21:38:34,533 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,534 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,534 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 0.33499999999999996
+2024-12-05 21:38:34,534 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,534 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,534 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,535 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,535 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,535 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,535 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,535 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,536 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,536 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,536 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,536 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,537 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 1.05
+2024-12-05 21:38:34,537 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,537 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,537 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,537 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,538 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,538 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 1.335
+2024-12-05 21:38:34,538 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,538 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,539 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,539 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,539 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,539 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,539 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,540 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,540 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,540 - findfont: score(FontEntry(fname='/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,540 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf', name='Liberation Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,540 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf', name='Liberation Mono', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,541 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf', name='Liberation Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,541 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-BoldItalic.ttf', name='Liberation Sans Narrow', style='italic', variant='normal', weight=700, stretch='condensed', size='scalable')) = 11.535
+2024-12-05 21:38:34,541 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', name='Liberation Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,541 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf', name='Liberation Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-05 21:38:34,541 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Bold.ttf', name='Liberation Sans Narrow', style='normal', variant='normal', weight=700, stretch='condensed', size='scalable')) = 10.535
+2024-12-05 21:38:34,542 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf', name='Liberation Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,542 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf', name='Liberation Sans', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,542 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Regular.ttf', name='Liberation Sans Narrow', style='normal', variant='normal', weight=400, stretch='condensed', size='scalable')) = 10.25
+2024-12-05 21:38:34,542 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf', name='Liberation Sans', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,543 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', name='Liberation Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,543 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf', name='Liberation Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-05 21:38:34,543 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf', name='Liberation Mono', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,543 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/humor-sans/Humor-Sans.ttf', name='Humor Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-05 21:38:34,543 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Italic.ttf', name='Liberation Sans Narrow', style='italic', variant='normal', weight=400, stretch='condensed', size='scalable')) = 11.25
+2024-12-05 21:38:34,544 - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf', name='Liberation Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-05 21:38:34,544 - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('/usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.

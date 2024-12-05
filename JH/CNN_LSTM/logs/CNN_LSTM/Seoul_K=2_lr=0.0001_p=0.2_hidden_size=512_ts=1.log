@@ -1,0 +1,38 @@
+2024-12-05 22:18:17,045 - Training model with Seoul_K=2_lr=0.0001_p=0.2_hidden_size=512
+2024-12-05 22:18:17,045 - Config: {'learning_rate': 0.0001, 'epochs': 500, 'batch_size': 32, 'num_layers': 2, 'hidden_size': 512, 'window_size': 24, 'output_size': 1, 'dropout_prob': 0.2, 'patience': 10, 'out_channels': 4, 'kernel_size': 3, 'K': 2}
+2024-12-05 22:18:17,046 - Model: FinedustCNNLSTM(
+  (cnn): PM10CNN(
+    (act): GELU(approximate='none')
+    (conv_list): ModuleList(
+      (0-1): 2 x Conv1d(4, 4, kernel_size=(3,), stride=(1,), padding=(1,))
+    )
+  )
+  (lstm): FinedustLSTM(
+    (lstm): LSTMEmbedding(
+      (lstm): LSTM(20, 512, num_layers=2, batch_first=True, dropout=0.2)
+    )
+    (fc1): Linear(in_features=512, out_features=512, bias=True)
+    (fc2): Linear(in_features=512, out_features=1, bias=True)
+    (act): GELU(approximate='none')
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+)
+2024-12-05 22:18:17,046 - Model size: 3458153
+
+2024-12-05 22:18:17,046 - Train dataset: 8404
+2024-12-05 22:18:17,046 - Valid dataset: 2101
+
+2024-12-05 22:18:18,733 - Epoch 1/500, Train Loss: 39.5510, Val Loss: 32.3649
+2024-12-05 22:18:18,777 - Model saved with loss: 32.3649
+2024-12-05 22:18:20,385 - Epoch 2/500, Train Loss: 36.6003, Val Loss: 32.3736
+2024-12-05 22:18:21,967 - Epoch 3/500, Train Loss: 36.6174, Val Loss: 32.3699
+2024-12-05 22:18:23,545 - Epoch 4/500, Train Loss: 36.7306, Val Loss: 32.4224
+2024-12-05 22:18:25,140 - Epoch 5/500, Train Loss: 36.6009, Val Loss: 32.4094
+2024-12-05 22:18:26,740 - Epoch 6/500, Train Loss: 36.5531, Val Loss: 32.5137
+2024-12-05 22:18:28,332 - Epoch 7/500, Train Loss: 36.5674, Val Loss: 32.6363
+2024-12-05 22:18:29,923 - Epoch 8/500, Train Loss: 36.6541, Val Loss: 32.3745
+2024-12-05 22:18:31,591 - Epoch 9/500, Train Loss: 36.7569, Val Loss: 32.3704
+2024-12-05 22:18:33,219 - Epoch 10/500, Train Loss: 36.5877, Val Loss: 32.3856
+2024-12-05 22:18:34,858 - Epoch 11/500, Train Loss: 36.4895, Val Loss: 32.3946
+2024-12-05 22:18:34,859 - Early stopping triggered after 10 epochs without improvement
+2024-12-05 22:18:34,861 - Training completed with best loss: 32.3649

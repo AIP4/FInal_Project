@@ -1,0 +1,47 @@
+2024-12-05 17:38:46,477 - Training model with Jeonju_K=3
+2024-12-05 17:38:46,478 - Config: {'learning_rate': 4e-05, 'epochs': 500, 'batch_size': 32, 'num_layers': 2, 'hidden_size': 128, 'window_size': 24, 'output_size': 1, 'dropout_prob': 0.2, 'patience': 10, 'out_channels': 16, 'kernel_size': 3, 'K': 3}
+2024-12-05 17:38:46,478 - Model: FinedustCNNLSTM(
+  (cnn): PM10CNN(
+    (act): GELU(approximate='none')
+    (conv_list): ModuleList(
+      (0): Conv1d(4, 16, kernel_size=(3,), stride=(1,), padding=(1,))
+      (1-2): 2 x Conv1d(16, 16, kernel_size=(3,), stride=(1,), padding=(1,))
+    )
+  )
+  (lstm): FinedustLSTM(
+    (lstm): LSTMEmbedding(
+      (lstm): LSTM(56, 128, num_layers=2, batch_first=True, dropout=0.2)
+    )
+    (fc1): Linear(in_features=128, out_features=128, bias=True)
+    (fc2): Linear(in_features=128, out_features=1, bias=True)
+    (act): GELU(approximate='none')
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+)
+2024-12-05 17:38:46,479 - Model size: 245745
+
+2024-12-05 17:38:46,479 - Train dataset: 8406
+2024-12-05 17:38:46,479 - Valid dataset: 2102
+
+2024-12-05 17:38:47,825 - Epoch 1/500, Train Loss: 39.9678, Val Loss: 32.6566
+2024-12-05 17:38:47,835 - Model saved with loss: 32.6566
+2024-12-05 17:38:49,171 - Epoch 2/500, Train Loss: 31.9970, Val Loss: 26.5943
+2024-12-05 17:38:49,181 - Model saved with loss: 26.5943
+2024-12-05 17:38:50,469 - Epoch 3/500, Train Loss: 28.1573, Val Loss: 24.3162
+2024-12-05 17:38:50,479 - Model saved with loss: 24.3162
+2024-12-05 17:38:51,792 - Epoch 4/500, Train Loss: 26.9348, Val Loss: 23.9476
+2024-12-05 17:38:51,803 - Model saved with loss: 23.9476
+2024-12-05 17:38:53,110 - Epoch 5/500, Train Loss: 26.8539, Val Loss: 23.9469
+2024-12-05 17:38:53,119 - Model saved with loss: 23.9469
+2024-12-05 17:38:54,416 - Epoch 6/500, Train Loss: 26.9715, Val Loss: 23.9531
+2024-12-05 17:38:55,719 - Epoch 7/500, Train Loss: 27.1785, Val Loss: 23.9581
+2024-12-05 17:38:57,027 - Epoch 8/500, Train Loss: 26.8601, Val Loss: 23.9513
+2024-12-05 17:38:58,330 - Epoch 9/500, Train Loss: 26.7353, Val Loss: 23.9534
+2024-12-05 17:38:59,633 - Epoch 10/500, Train Loss: 26.9520, Val Loss: 23.9545
+2024-12-05 17:39:00,945 - Epoch 11/500, Train Loss: 26.8575, Val Loss: 23.9652
+2024-12-05 17:39:02,246 - Epoch 12/500, Train Loss: 27.0221, Val Loss: 23.9652
+2024-12-05 17:39:03,524 - Epoch 13/500, Train Loss: 26.9708, Val Loss: 23.9496
+2024-12-05 17:39:04,814 - Epoch 14/500, Train Loss: 26.9405, Val Loss: 23.9530
+2024-12-05 17:39:06,103 - Epoch 15/500, Train Loss: 26.9020, Val Loss: 23.9657
+2024-12-05 17:39:06,104 - Early stopping triggered after 10 epochs without improvement
+2024-12-05 17:39:06,105 - Training completed with best loss: 23.9469
