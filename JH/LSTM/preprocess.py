@@ -8,6 +8,7 @@ def minmax_scaling(data):
     # Select numeric columns excluding 'diff'
     numeric_columns = data.select_dtypes(include=['number']).columns
     numeric_columns = numeric_columns.drop("diff")
+    numeric_columns = numeric_columns.drop("PM10")
     
     # Fit MinMaxScaler and transform the numeric columns
     scaled_numeric = scaler.fit_transform(data[numeric_columns])

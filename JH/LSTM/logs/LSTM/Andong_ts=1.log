@@ -1,0 +1,19 @@
+2024-12-04 16:03:57,578 - Training model with Andong
+2024-12-04 16:03:57,578 - Config: {'learning_rate': 0.001, 'epochs': 200, 'batch_size': 32, 'num_layers': 3, 'hidden_size': 64, 'window_size': 168, 'output_size': 1, 'dropout': 0.2, 'patience': 10}
+2024-12-04 16:03:57,579 - Model: FinedustLSTM(
+  (lstm): LSTMEmbedding(
+    (lstm): LSTM(10, 64, num_layers=3, batch_first=True, dropout=0.2)
+    (fc1): Linear(in_features=64, out_features=192, bias=True)
+    (fc2): Linear(in_features=192, out_features=64, bias=True)
+    (act): GELU(approximate='none')
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (fc1): Linear(in_features=64, out_features=64, bias=True)
+  (fc2): Linear(in_features=64, out_features=1, bias=True)
+  (act): GELU(approximate='none')
+  (dropout): Dropout(p=0.2, inplace=False)
+)
+
+2024-12-04 16:03:57,579 - Train dataset: 31988
+2024-12-04 16:03:57,579 - Valid dataset: 7997
+
