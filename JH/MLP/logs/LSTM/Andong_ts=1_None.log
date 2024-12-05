@@ -1,0 +1,14 @@
+2024-12-06 03:16:04,566 - Training model with Andong
+2024-12-06 03:16:04,567 - Config: {'learning_rate': 0.0001, 'epochs': 500, 'batch_size': 32, 'output_size': 1, 'dropout_prob': 0.2, 'patience': 10}
+2024-12-06 03:16:04,567 - Model: MLP(
+  (fc1): Linear(in_features=9, out_features=64, bias=True)
+  (fc2): Linear(in_features=64, out_features=32, bias=True)
+  (fc3): Linear(in_features=32, out_features=1, bias=True)
+  (act): GELU(approximate='none')
+  (dropout): Dropout(p=0.2, inplace=False)
+)
+
+2024-12-06 03:16:04,567 - Train dataset: 32123
+2024-12-06 03:16:04,567 - Valid dataset: 8031
+2024-12-06 03:16:04,567 - Model size: 2753
+2024-12-06 03:16:06,630 - Epoch 1/500, Train Loss: 17.3462, Val Loss: 2.1576
