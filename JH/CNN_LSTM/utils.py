@@ -138,3 +138,7 @@ def prepare_data_for_CNN_LSTM(region, columns_to_remove):
     df = convert_timesteps(df, diff=3)
 
     return df
+
+def get_model_size(model):
+    total_params = sum(p.numel() for p in model.parameters())
+    return total_params

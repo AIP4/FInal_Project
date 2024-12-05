@@ -2,6 +2,27 @@ import torch
 import torch.nn as nn
 import einops
 
+### CNN-LSTM Model
+class FinedustCNNLSTM(nn.Module):
+    def __init__(self, config, in_channels, input_size):
+        super(FinedustCNNLSTM, self).__init__()
+        self.config = config
+        self.cnn = PM10CNN(in_channels,
+                           config["out_channels"],
+                           config["kernel_size"],
+                           config["K"])
+        self.lstm = FinedustLSTM(input_size + config["K"]*config["out_channels"],
+                                 config["num_layers"],
+                                 config["hidden_size"],
+                                 config["output_size"],
+                                 config["dropout_prob"])
+
+    def forward(self, w_x, pm_x):
+        pm_x = self.cnn(pm_x)
+        x = torch.cat((w_x, pm_x), dim=-1)
+        x = self.lstm(x)
+        return x
+
 
 ### Conv1d Model
 class PM10CNN(nn.Module):
@@ -57,15 +78,6 @@ class LSTMEmbedding(nn.Module):
         # LSTM Layer
         self.lstm = (nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, dropout=dropout_prob)
                      if num_layers > 1 else nn.LSTM(input_size, hidden_size, 1, batch_first=True))
-        
-        # Additional fully connected layers
-        # 시계열 데이터는 일반적으로 Trend, Seasonality, Noise로 구분되므로 3개로 Mapping해보자
-        self.fc1 = nn.Linear(hidden_size, hidden_size * 3)  # 첫 번째 선형 계층
-        self.fc2 = nn.Linear(hidden_size * 3, hidden_size)  # 두 번째 선형 계층
-        
-        # Activation and Dropout
-        self.act = nn.GELU()         # 활성화 함수로 GELU 사용
-        self.dropout = nn.Dropout(p=dropout_prob)  # 드롭아웃 추가
 
     def forward(self, x):
         # Initializing hidden state for first input
@@ -75,9 +87,5 @@ class LSTMEmbedding(nn.Module):
         # LSTM forward pass
         out, _ = self.lstm(x, (h0, c0))  # LSTM output
         out = out[:, -1, :]  # 마지막 시퀀스의 출력만 사용
-        
-        # Fully connected layers with GELU and Dropout
-        out = self.dropout(self.act(self.fc1(out)))  # 첫 번째 선형 계층
-        out = self.dropout(self.act(self.fc2(out)))  # 두 번째 선형 계층
         
         return out

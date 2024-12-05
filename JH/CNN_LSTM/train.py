@@ -1,5 +1,5 @@
 from tqdm import tqdm
-from utils import set_logger
+from utils import set_logger, get_model_size
 from dataset import FinedustDataset
 from model import FinedustLSTM
 from utils import prepare_data
@@ -9,6 +9,7 @@ import logging
 from interpolate import simple_interpolate
 import numpy as np
 import math
+import matplotlib.pyplot as plt
 
 import torch
 import torch.optim as optim
@@ -122,7 +123,6 @@ def train(model,
 def train_cnn_lstm(model,
           train_dataset,
           valid_dataset,
-          feature_columns,
           region,
           model_name,
           config,
@@ -139,7 +139,8 @@ def train_cnn_lstm(model,
     # Model
     logging.info(f"Training model with {region}")
     logging.info(f"Config: {config}")
-    logging.info(f"Model: {model}\n")
+    logging.info(f"Model: {model}")
+    logging.info(f"Model size: {get_model_size(model)}\n")
 
     logging.info(f"Train dataset: {len(train_dataset)}")
     logging.info(f"Valid dataset: {len(valid_dataset)}\n")
@@ -166,10 +167,9 @@ def train_cnn_lstm(model,
         model.train()
         train_loss = 0
 
-        for batch in train_loader:
-            x, y = batch
-            x, y = x.to(device), y.to(device)
-            pred = model(x)
+        for w_x, pm_x, y in train_loader:
+            w_x, pm_x, y = w_x.to(device), pm_x.to(device), y.to(device)
+            pred = model(w_x=w_x, pm_x=pm_x)
 
             loss = loss_fn(pred, y)
             optimizer.zero_grad()
@@ -185,9 +185,9 @@ def train_cnn_lstm(model,
         val_loss = 0
         epoch_results = []
         with torch.no_grad():
-            for x, y in val_loader:
-                x, y = x.to(device), y.to(device)
-                pred = model(x)
+            for w_x, pm_x, y in val_loader:
+                w_x, pm_x, y = w_x.to(device), pm_x.to(device), y.to(device)
+                pred = model(w_x=w_x, pm_x=pm_x)
                 loss = loss_fn(pred, y)
                 val_loss += math.sqrt(loss.item())
                 epoch_results.append(np.concatenate((pred.cpu().numpy(), y.cpu().numpy()), axis=1))
@@ -218,7 +218,7 @@ def train_cnn_lstm(model,
     logging.info(f"Training completed with best loss: {best_loss:.4f}")
 
     save_loss_figure(losses_array, model_name, region)
-    save_results_figure(results_array, model_name, region, losses_array)
+    # save_results_figure(results_array, model_name, region, losses_array)
     
     return results_array[-1], losses_array
 
@@ -236,9 +236,7 @@ def validate(model, val_loader, loss_fn, device):
         preds.append(pred.cpu().numpy())
     val_loss /= len(val_loader)
     return val_loss, preds
-    
 
-import matplotlib.pyplot as plt
 
 def save_loss_figure(losses_array, model_name, region):
     plt.figure(figsize=(10, 6))
