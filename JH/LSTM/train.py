@@ -106,7 +106,7 @@ def train(train_dataset,
             if epochs_without_improvement >= config['patience']:
                 logging.info(f"Early stopping triggered after {epochs_without_improvement} epochs without improvement")
                 break
-            losses.append((train_loss, val_loss))
+        losses.append((train_loss, val_loss))
 
     total_preds = np.stack(total_preds, axis=0)
     losses_array = np.array(losses)
