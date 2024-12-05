@@ -1,4 +1,5 @@
 ### Junho
 *.html
 *tmp*.py
-*.log
+__pycache__
+*_results*.png
