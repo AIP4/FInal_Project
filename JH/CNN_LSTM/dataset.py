@@ -53,7 +53,7 @@ class FinedustCNNLSTMDataset(Dataset):
     3시간 단위로 연속하지 않는 행들을 제거하는 데이터셋
     Default: 이전 일주일을 입력으로 다음 3일 예측 (timesteps = (24 / 3) X 7 = 56)
     """
-    def __init__(self, data, window_size=56, prediction_length=24, time_window=3):
+    def __init__(self, data, window_size=56, prediction_length=24, time_window=3, time_diff=0):
         self.data = data
         self.window_size = window_size
         self.prediction_length = prediction_length
@@ -69,12 +69,12 @@ class FinedustCNNLSTMDataset(Dataset):
         self.feature_columns.remove(self.dust_column)
         self.feature_columns = [col for col in self.feature_columns if col not in self.pm_columns and col != self.dust_column]
 
-        for i in range(len(self.data) - self.window_size - self.prediction_length + 1):
-            time_window = self.time_column[i:i + self.window_size + self.prediction_length]
+        for i in range(time_diff, len(self.data) - self.window_size - self.prediction_length + 1):
+            time_window = self.time_column[i - time_diff :i - time_diff + self.window_size + self.prediction_length]
             is_continuous = all(time_window == time_window)
             if is_continuous:
                 w_x = self.data[self.feature_columns].iloc[i:i+self.window_size].values
-                pm_x = self.data[self.pm_columns].iloc[i:i+self.window_size].values
+                pm_x = self.data[self.pm_columns].iloc[i- time_diff:i- time_diff + self.window_size].values
                 y = self.data[self.dust_column].iloc[
                     i+self.window_size:i+self.window_size+self.prediction_length].values
                 self.sequences.append((w_x, pm_x, y))
