@@ -1,0 +1,185 @@
+2024-12-06 04:18:25,860 - Training model with Daegu_K=1_T=16
+2024-12-06 04:18:25,861 - Config: {'learning_rate': 0.0002, 'epochs': 500, 'batch_size': 32, 'num_layers': 2, 'hidden_size': 128, 'window_size': 24, 'output_size': 1, 'dropout_prob': 0.2, 'patience': 10, 'out_channels': 4, 'kernel_size': 3, 'K': 1}
+2024-12-06 04:18:25,861 - Model: FinedustCNNLSTM(
+  (cnn): PM10CNN(
+    (act): GELU(approximate='none')
+    (conv_list): ModuleList(
+      (0-1): 2 x Conv1d(4, 4, kernel_size=(3,), stride=(1,), padding=(1,))
+    )
+  )
+  (lstm): FinedustLSTM(
+    (lstm): LSTMEmbedding(
+      (lstm): LSTM(16, 128, num_layers=2, batch_first=True, dropout=0.2)
+    )
+    (fc1): Linear(in_features=128, out_features=128, bias=True)
+    (fc2): Linear(in_features=128, out_features=1, bias=True)
+    (act): GELU(approximate='none')
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+)
+2024-12-06 04:18:25,861 - Model size: 223593
+
+2024-12-06 04:18:25,861 - Train dataset: 8393
+2024-12-06 04:18:25,862 - Valid dataset: 2099
+
+2024-12-06 04:18:27,115 - Epoch 1/500, Train Loss: 24.6932, Val Loss: 21.1564
+2024-12-06 04:18:27,125 - Model saved with loss: 21.1564
+2024-12-06 04:18:28,351 - Epoch 2/500, Train Loss: 20.6017, Val Loss: 21.1016
+2024-12-06 04:18:28,361 - Model saved with loss: 21.1016
+2024-12-06 04:18:29,616 - Epoch 3/500, Train Loss: 20.5907, Val Loss: 21.0877
+2024-12-06 04:18:29,625 - Model saved with loss: 21.0877
+2024-12-06 04:18:30,833 - Epoch 4/500, Train Loss: 20.5976, Val Loss: 21.0999
+2024-12-06 04:18:32,060 - Epoch 5/500, Train Loss: 20.6030, Val Loss: 21.1435
+2024-12-06 04:18:33,283 - Epoch 6/500, Train Loss: 20.5758, Val Loss: 21.1170
+2024-12-06 04:18:34,486 - Epoch 7/500, Train Loss: 20.5436, Val Loss: 21.1195
+2024-12-06 04:18:35,693 - Epoch 8/500, Train Loss: 20.5701, Val Loss: 21.0978
+2024-12-06 04:18:36,930 - Epoch 9/500, Train Loss: 20.5911, Val Loss: 21.1336
+2024-12-06 04:18:38,147 - Epoch 10/500, Train Loss: 20.5452, Val Loss: 21.1650
+2024-12-06 04:18:39,376 - Epoch 11/500, Train Loss: 20.2266, Val Loss: 19.8728
+2024-12-06 04:18:39,386 - Model saved with loss: 19.8728
+2024-12-06 04:18:40,611 - Epoch 12/500, Train Loss: 19.5389, Val Loss: 19.7844
+2024-12-06 04:18:40,620 - Model saved with loss: 19.7844
+2024-12-06 04:18:41,906 - Epoch 13/500, Train Loss: 19.1482, Val Loss: 19.5177
+2024-12-06 04:18:41,916 - Model saved with loss: 19.5177
+2024-12-06 04:18:43,121 - Epoch 14/500, Train Loss: 18.9416, Val Loss: 19.3019
+2024-12-06 04:18:43,130 - Model saved with loss: 19.3019
+2024-12-06 04:18:44,338 - Epoch 15/500, Train Loss: 18.7897, Val Loss: 19.1605
+2024-12-06 04:18:44,347 - Model saved with loss: 19.1605
+2024-12-06 04:18:45,556 - Epoch 16/500, Train Loss: 18.4403, Val Loss: 19.0958
+2024-12-06 04:18:45,565 - Model saved with loss: 19.0958
+2024-12-06 04:18:46,775 - Epoch 17/500, Train Loss: 18.3410, Val Loss: 18.8836
+2024-12-06 04:18:46,785 - Model saved with loss: 18.8836
+2024-12-06 04:18:47,998 - Epoch 18/500, Train Loss: 18.2923, Val Loss: 18.7771
+2024-12-06 04:18:48,007 - Model saved with loss: 18.7771
+2024-12-06 04:18:49,209 - Epoch 19/500, Train Loss: 18.0939, Val Loss: 18.8292
+2024-12-06 04:18:50,415 - Epoch 20/500, Train Loss: 18.0741, Val Loss: 18.6110
+2024-12-06 04:18:50,442 - Model saved with loss: 18.6110
+2024-12-06 04:18:51,660 - Epoch 21/500, Train Loss: 17.9764, Val Loss: 18.5739
+2024-12-06 04:18:51,670 - Model saved with loss: 18.5739
+2024-12-06 04:18:52,941 - Epoch 22/500, Train Loss: 17.7107, Val Loss: 18.4801
+2024-12-06 04:18:52,951 - Model saved with loss: 18.4801
+2024-12-06 04:18:54,165 - Epoch 23/500, Train Loss: 17.7152, Val Loss: 18.3543
+2024-12-06 04:18:54,175 - Model saved with loss: 18.3543
+2024-12-06 04:18:55,382 - Epoch 24/500, Train Loss: 17.4475, Val Loss: 18.6424
+2024-12-06 04:18:56,583 - Epoch 25/500, Train Loss: 17.4941, Val Loss: 18.2276
+2024-12-06 04:18:56,592 - Model saved with loss: 18.2276
+2024-12-06 04:18:57,798 - Epoch 26/500, Train Loss: 17.5509, Val Loss: 18.3125
+2024-12-06 04:18:59,017 - Epoch 27/500, Train Loss: 17.4680, Val Loss: 18.2073
+2024-12-06 04:18:59,026 - Model saved with loss: 18.2073
+2024-12-06 04:19:00,243 - Epoch 28/500, Train Loss: 17.3718, Val Loss: 18.0175
+2024-12-06 04:19:00,252 - Model saved with loss: 18.0175
+2024-12-06 04:19:01,505 - Epoch 29/500, Train Loss: 17.1785, Val Loss: 17.9920
+2024-12-06 04:19:01,514 - Model saved with loss: 17.9920
+2024-12-06 04:19:02,779 - Epoch 30/500, Train Loss: 17.3599, Val Loss: 18.0239
+2024-12-06 04:19:04,032 - Epoch 31/500, Train Loss: 17.1679, Val Loss: 18.0196
+2024-12-06 04:19:05,308 - Epoch 32/500, Train Loss: 17.0184, Val Loss: 17.8517
+2024-12-06 04:19:05,317 - Model saved with loss: 17.8517
+2024-12-06 04:19:06,572 - Epoch 33/500, Train Loss: 17.0251, Val Loss: 17.9102
+2024-12-06 04:19:07,808 - Epoch 34/500, Train Loss: 16.9333, Val Loss: 17.8347
+2024-12-06 04:19:07,817 - Model saved with loss: 17.8347
+2024-12-06 04:19:09,039 - Epoch 35/500, Train Loss: 16.9029, Val Loss: 17.9595
+2024-12-06 04:19:10,254 - Epoch 36/500, Train Loss: 16.9514, Val Loss: 17.7921
+2024-12-06 04:19:10,263 - Model saved with loss: 17.7921
+2024-12-06 04:19:11,472 - Epoch 37/500, Train Loss: 16.8918, Val Loss: 17.6861
+2024-12-06 04:19:11,481 - Model saved with loss: 17.6861
+2024-12-06 04:19:12,694 - Epoch 38/500, Train Loss: 16.8429, Val Loss: 17.5960
+2024-12-06 04:19:12,702 - Model saved with loss: 17.5960
+2024-12-06 04:19:13,903 - Epoch 39/500, Train Loss: 16.6734, Val Loss: 17.5836
+2024-12-06 04:19:13,911 - Model saved with loss: 17.5836
+2024-12-06 04:19:15,108 - Epoch 40/500, Train Loss: 16.7261, Val Loss: 17.6493
+2024-12-06 04:19:16,310 - Epoch 41/500, Train Loss: 16.5598, Val Loss: 17.8833
+2024-12-06 04:19:17,529 - Epoch 42/500, Train Loss: 16.7077, Val Loss: 17.6431
+2024-12-06 04:19:18,771 - Epoch 43/500, Train Loss: 16.7184, Val Loss: 17.7244
+2024-12-06 04:19:20,001 - Epoch 44/500, Train Loss: 16.5828, Val Loss: 17.9202
+2024-12-06 04:19:21,231 - Epoch 45/500, Train Loss: 16.6109, Val Loss: 17.5226
+2024-12-06 04:19:21,255 - Model saved with loss: 17.5226
+2024-12-06 04:19:22,506 - Epoch 46/500, Train Loss: 16.4516, Val Loss: 17.5148
+2024-12-06 04:19:22,517 - Model saved with loss: 17.5148
+2024-12-06 04:19:23,762 - Epoch 47/500, Train Loss: 16.2351, Val Loss: 17.2928
+2024-12-06 04:19:23,772 - Model saved with loss: 17.2928
+2024-12-06 04:19:24,989 - Epoch 48/500, Train Loss: 16.3220, Val Loss: 17.4293
+2024-12-06 04:19:26,208 - Epoch 49/500, Train Loss: 16.2871, Val Loss: 17.4101
+2024-12-06 04:19:27,445 - Epoch 50/500, Train Loss: 16.1566, Val Loss: 17.3260
+2024-12-06 04:19:28,708 - Epoch 51/500, Train Loss: 16.1529, Val Loss: 17.1674
+2024-12-06 04:19:28,717 - Model saved with loss: 17.1674
+2024-12-06 04:19:29,973 - Epoch 52/500, Train Loss: 16.0192, Val Loss: 17.1224
+2024-12-06 04:19:29,984 - Model saved with loss: 17.1224
+2024-12-06 04:19:31,204 - Epoch 53/500, Train Loss: 16.1324, Val Loss: 17.1147
+2024-12-06 04:19:31,213 - Model saved with loss: 17.1147
+2024-12-06 04:19:32,438 - Epoch 54/500, Train Loss: 15.9831, Val Loss: 17.1384
+2024-12-06 04:19:33,665 - Epoch 55/500, Train Loss: 15.8643, Val Loss: 16.9392
+2024-12-06 04:19:33,674 - Model saved with loss: 16.9392
+2024-12-06 04:19:34,905 - Epoch 56/500, Train Loss: 15.8789, Val Loss: 17.6251
+2024-12-06 04:19:36,121 - Epoch 57/500, Train Loss: 15.8454, Val Loss: 17.0831
+2024-12-06 04:19:37,347 - Epoch 58/500, Train Loss: 15.6960, Val Loss: 17.3138
+2024-12-06 04:19:38,566 - Epoch 59/500, Train Loss: 15.4406, Val Loss: 17.5785
+2024-12-06 04:19:39,789 - Epoch 60/500, Train Loss: 15.7641, Val Loss: 17.1545
+2024-12-06 04:19:41,014 - Epoch 61/500, Train Loss: 15.5526, Val Loss: 16.8531
+2024-12-06 04:19:41,025 - Model saved with loss: 16.8531
+2024-12-06 04:19:42,278 - Epoch 62/500, Train Loss: 15.4565, Val Loss: 16.8556
+2024-12-06 04:19:43,540 - Epoch 63/500, Train Loss: 15.6200, Val Loss: 16.9229
+2024-12-06 04:19:44,747 - Epoch 64/500, Train Loss: 15.0708, Val Loss: 16.6696
+2024-12-06 04:19:44,756 - Model saved with loss: 16.6696
+2024-12-06 04:19:45,972 - Epoch 65/500, Train Loss: 14.9540, Val Loss: 16.8775
+2024-12-06 04:19:47,181 - Epoch 66/500, Train Loss: 15.0223, Val Loss: 16.6303
+2024-12-06 04:19:47,190 - Model saved with loss: 16.6303
+2024-12-06 04:19:48,396 - Epoch 67/500, Train Loss: 14.8545, Val Loss: 16.4018
+2024-12-06 04:19:48,405 - Model saved with loss: 16.4018
+2024-12-06 04:19:49,621 - Epoch 68/500, Train Loss: 14.6854, Val Loss: 16.4294
+2024-12-06 04:19:50,832 - Epoch 69/500, Train Loss: 14.5443, Val Loss: 16.4732
+2024-12-06 04:19:52,047 - Epoch 70/500, Train Loss: 14.8634, Val Loss: 16.8469
+2024-12-06 04:19:53,290 - Epoch 71/500, Train Loss: 14.4132, Val Loss: 16.5263
+2024-12-06 04:19:54,548 - Epoch 72/500, Train Loss: 14.2039, Val Loss: 16.5079
+2024-12-06 04:19:55,787 - Epoch 73/500, Train Loss: 14.6254, Val Loss: 18.1459
+2024-12-06 04:19:56,998 - Epoch 74/500, Train Loss: 15.2194, Val Loss: 15.9814
+2024-12-06 04:19:57,008 - Model saved with loss: 15.9814
+2024-12-06 04:19:58,221 - Epoch 75/500, Train Loss: 13.9353, Val Loss: 16.4605
+2024-12-06 04:19:59,432 - Epoch 76/500, Train Loss: 13.7755, Val Loss: 15.8902
+2024-12-06 04:19:59,441 - Model saved with loss: 15.8902
+2024-12-06 04:20:00,650 - Epoch 77/500, Train Loss: 13.9006, Val Loss: 15.7657
+2024-12-06 04:20:00,660 - Model saved with loss: 15.7657
+2024-12-06 04:20:01,875 - Epoch 78/500, Train Loss: 14.0131, Val Loss: 15.7520
+2024-12-06 04:20:01,898 - Model saved with loss: 15.7520
+2024-12-06 04:20:03,140 - Epoch 79/500, Train Loss: 13.5962, Val Loss: 16.0028
+2024-12-06 04:20:04,387 - Epoch 80/500, Train Loss: 13.7459, Val Loss: 15.6187
+2024-12-06 04:20:04,396 - Model saved with loss: 15.6187
+2024-12-06 04:20:05,628 - Epoch 81/500, Train Loss: 13.4792, Val Loss: 15.8586
+2024-12-06 04:20:06,909 - Epoch 82/500, Train Loss: 13.2321, Val Loss: 15.4854
+2024-12-06 04:20:06,919 - Model saved with loss: 15.4854
+2024-12-06 04:20:08,137 - Epoch 83/500, Train Loss: 13.2268, Val Loss: 15.5308
+2024-12-06 04:20:09,354 - Epoch 84/500, Train Loss: 13.1005, Val Loss: 16.6357
+2024-12-06 04:20:10,567 - Epoch 85/500, Train Loss: 13.8196, Val Loss: 15.5352
+2024-12-06 04:20:11,789 - Epoch 86/500, Train Loss: 13.3217, Val Loss: 15.6668
+2024-12-06 04:20:12,997 - Epoch 87/500, Train Loss: 13.1801, Val Loss: 15.5611
+2024-12-06 04:20:14,209 - Epoch 88/500, Train Loss: 13.0064, Val Loss: 15.6421
+2024-12-06 04:20:15,423 - Epoch 89/500, Train Loss: 12.8978, Val Loss: 15.3912
+2024-12-06 04:20:15,434 - Model saved with loss: 15.3912
+2024-12-06 04:20:16,647 - Epoch 90/500, Train Loss: 12.7113, Val Loss: 15.0443
+2024-12-06 04:20:16,656 - Model saved with loss: 15.0443
+2024-12-06 04:20:17,875 - Epoch 91/500, Train Loss: 12.6302, Val Loss: 15.1357
+2024-12-06 04:20:19,153 - Epoch 92/500, Train Loss: 12.7142, Val Loss: 15.4432
+2024-12-06 04:20:20,364 - Epoch 93/500, Train Loss: 12.5607, Val Loss: 15.2104
+2024-12-06 04:20:21,577 - Epoch 94/500, Train Loss: 14.2397, Val Loss: 16.6692
+2024-12-06 04:20:22,806 - Epoch 95/500, Train Loss: 14.1243, Val Loss: 16.3470
+2024-12-06 04:20:24,022 - Epoch 96/500, Train Loss: 12.7243, Val Loss: 15.3088
+2024-12-06 04:20:25,222 - Epoch 97/500, Train Loss: 12.5522, Val Loss: 15.2615
+2024-12-06 04:20:26,437 - Epoch 98/500, Train Loss: 12.2789, Val Loss: 14.8864
+2024-12-06 04:20:26,447 - Model saved with loss: 14.8864
+2024-12-06 04:20:27,668 - Epoch 99/500, Train Loss: 12.4393, Val Loss: 15.7443
+2024-12-06 04:20:28,890 - Epoch 100/500, Train Loss: 12.6178, Val Loss: 14.8856
+2024-12-06 04:20:28,899 - Model saved with loss: 14.8856
+2024-12-06 04:20:30,129 - Epoch 101/500, Train Loss: 12.1191, Val Loss: 14.9023
+2024-12-06 04:20:31,376 - Epoch 102/500, Train Loss: 12.4265, Val Loss: 14.6803
+2024-12-06 04:20:31,386 - Model saved with loss: 14.6803
+2024-12-06 04:20:32,605 - Epoch 103/500, Train Loss: 11.9290, Val Loss: 15.1575
+2024-12-06 04:20:33,828 - Epoch 104/500, Train Loss: 12.7611, Val Loss: 15.3924
+2024-12-06 04:20:35,037 - Epoch 105/500, Train Loss: 12.4314, Val Loss: 14.8443
+2024-12-06 04:20:36,247 - Epoch 106/500, Train Loss: 11.8683, Val Loss: 14.9925
+2024-12-06 04:20:37,452 - Epoch 107/500, Train Loss: 11.7904, Val Loss: 14.9020
+2024-12-06 04:20:38,660 - Epoch 108/500, Train Loss: 11.9981, Val Loss: 14.7540
+2024-12-06 04:20:39,873 - Epoch 109/500, Train Loss: 11.6086, Val Loss: 14.7169
+2024-12-06 04:20:41,082 - Epoch 110/500, Train Loss: 11.7775, Val Loss: 14.7681
+2024-12-06 04:20:42,306 - Epoch 111/500, Train Loss: 11.9148, Val Loss: 14.8292
+2024-12-06 04:20:43,529 - Epoch 112/500, Train Loss: 11.5688, Val Loss: 15.2403
+2024-12-06 04:20:43,530 - Early stopping triggered after 10 epochs without improvement
+2024-12-06 04:20:43,533 - Training completed with best loss: 14.6803
