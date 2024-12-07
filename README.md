@@ -1,5 +1,31 @@
-# Weather Data Columns
+# 24-2 AI Project : Air Quality Prediction
+---
+본 프로젝트는 다양한 딥러닝 모델링을 활용하여 미세먼지 농도(PM10)을 예측하고, 각 특성을 잘 반영할 수 있는 XAI 방법을 제시하는 것을 목표로 합니다.
 
+## Roles
+---
+- 신재환
+    - Baselien Modeling (MLP)
+    - Experiment Design
+    - Analysis
+- 한준호
+    - Data Collection
+    - Data Preprocessing
+    - Experiment Design
+    - Modeling (LSTM, 1DCNN-LSTM)
+    - Analysis
+    - PPT
+- 김태영
+    - Data Collection
+    - Data Preprocessing
+    - PPT
+- 유재룡
+    - PPT
+- 하상수
+    - -
+
+## Weather Data Columns
+---
 이 데이터셋은 다양한 기상 데이터를 포함하고 있습니다. 각 컬럼의 설명은 아래와 같습니다:
 
 | Column Name | Description |
